@@ -1,3 +1,6 @@
+
++ pretty gene count legend (2024-10-29, Tue, #271)
+
 # enrichplot 1.25.5
 
 + new `emaplot()`, `goplot()`, `cnetplot()` and `ssplot()`, all power by 'ggtangle' package (2024-10-24, Thu)

@@ -195,14 +195,25 @@ dotplot.enrichResult <- function(object, x = "geneRatio", color = "p.adjust",
 
     df$Description <- factor(df$Description,
                           levels=rev(unique(df$Description[idx])))
-    p <- ggplot(df, aes_string(x=x, y="Description", size=size, fill=colorBy)) +
+    
+
+    p <- ggplot(df, aes(x=.data[[x]], y=.data[["Description"]], 
+                        size=.data[[size]], fill=.data[[colorBy]])) +
         geom_point() +
         aes(shape = I(enrichplot_point_shape)) + 
         # scale_fill_continuous(name = color) +
         set_enrichplot_color(type = "fill", name = color) + 
         scale_y_discrete(labels = label_func) +
-        ylab(NULL) + ggtitle(title) + theme_dose(font.size) +
-        scale_size(range=c(3, 8))
+        ylab(NULL) + ggtitle(title) + theme_dose(font.size) 
+        
+    if (size == "Count") {
+        # integer
+        #size_n <- ceiling(sqrt(length(unique(df[[size]]))))
+        size_break <- pretty(df[[size]], n=4)
+        p <- p + scale_size(range=c(3, 8), breaks = size_break)
+    } else {
+        p <- p + scale_size(range=c(3, 8))
+    }
     
     class(p) <- c("enrichplotDot", class(p))
     return(p)
