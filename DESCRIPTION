@@ -34,6 +34,7 @@ Suggests:
     clusterProfiler,
     dplyr,
     europepmc,
+    ggarchery,
     ggupset,
     knitr,
     rmarkdown,

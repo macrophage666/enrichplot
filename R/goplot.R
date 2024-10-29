@@ -2,7 +2,7 @@
 ##' @exportMethod goplot
 setMethod("goplot", signature(x = "enrichResult"),
           function(x, showCategory = 10, color = "p.adjust",
-                   layout = "sugiyama", geom="text", ...) {
+                   layout = igraph::layout_with_sugiyama, geom="text", ...) {
               goplot.enrichResult(x, showCategory = showCategory,
                   color = color, layout = layout, geom = geom, ...)
           })
@@ -11,7 +11,7 @@ setMethod("goplot", signature(x = "enrichResult"),
 ##' @exportMethod goplot
 setMethod("goplot", signature(x = "gseaResult"),
           function(x, showCategory = 10, color = "p.adjust",
-                   layout = "sugiyama", geom="text", ...) {
+                   layout = igraph::layout_with_sugiyama, geom="text", ...) {
               goplot.enrichResult(x, showCategory = showCategory,
                   color = color, layout = layout, geom = geom, ...)
           })
@@ -26,7 +26,7 @@ setMethod("goplot", signature(x = "gseaResult"),
 ##' @importFrom rlang check_installed
 ##' @author Guangchuang Yu
 goplot.enrichResult <- function(x, showCategory = 10, color = "p.adjust",
-                                layout = "sugiyama", geom = "text", ...) {
+                                layout = igraph::layout_with_sugiyama, geom = "text", ...) {
     segment.size <- get_ggrepel_segsize()
     # has_package("AnnotationDbi")
     n <- update_n(x, showCategory)
@@ -64,16 +64,25 @@ goplot.enrichResult <- function(x, showCategory = 10, color = "p.adjust",
     g <- graph_from_data_frame(edge, directed=TRUE, vertices=node)
     E(g)$relationship <- edge[,3]
 
+    check_installed('ggarchery', 'for `goplot()`.')
+
+    position = ggarchery::position_attractsegment(
+            start_shave=.03, 
+            end_shave=.03,
+            type_shave="proportion"
+        )
     p <- ggplot(g, layout = layout) +
         geom_edge(aes(linetype = .data$relationship),
             arrow = arrow(length = unit(2, 'mm')),
-            colour="darkgrey") 
+            colour="darkgrey", position=position) 
 
     if (geom == "label") {
-        p <- p + geom_label_repel(aes(label=.data$label), segment.size = segment.size) +
+        p <- p + geom_label_repel(aes(label=.data$label, fill=.data$color, segment.size = segment.size)) +
             set_enrichplot_color(type = "fill", name = color, na.value="white")
     } else {
-        p <- p + geom_text_repel(aes(label=.data$label), segment.size = segment.size, bg.color="white", bg.r=.1) 
+        p <- p + geom_point(aes(color=.data$color), size=5) +
+            geom_text_repel(aes(label=.data$label), segment.size = segment.size, bg.color="white", bg.r=.1) +
+            set_enrichplot_color(type = "color", name = color, na.value="grey")
     }        
         
     return(p)

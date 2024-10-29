@@ -20,7 +20,7 @@ goplot(
   x,
   showCategory = 10,
   color = "p.adjust",
-  layout = "sugiyama",
+  layout = igraph::layout_with_sugiyama,
   geom = "text",
   ...
 )
@@ -29,7 +29,7 @@ goplot(
   x,
   showCategory = 10,
   color = "p.adjust",
-  layout = "sugiyama",
+  layout = igraph::layout_with_sugiyama,
   geom = "text",
   ...
 )
@@ -38,7 +38,7 @@ goplot.enrichResult(
   x,
   showCategory = 10,
   color = "p.adjust",
-  layout = "sugiyama",
+  layout = igraph::layout_with_sugiyama,
   geom = "text",
   ...
 )
