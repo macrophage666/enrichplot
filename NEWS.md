@@ -1,3 +1,4 @@
+# enrichplot 1.25.6
 
 + pretty gene count legend (2024-10-29, Tue, #271)
 

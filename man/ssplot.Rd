@@ -45,21 +45,16 @@ ssplot.compareClusterResult(
 
 additional parameters can refer the following parameters.
     \itemize{
-       \item \code{coords} a data.frame with two columns: 'x' for X-axis coordinate and 'y' for Y-axis coordinate.
        \item \code{color} Variable that used to color enriched terms, e.g. 'pvalue','p.adjust' or 'qvalue'.
         the starting position of each text label. 
-       \item \code{cex_line} Scale of line width.
+       \item \code{size_edge} Scale of line width.
        \item \code{min_edge} The minimum similarity threshold for whether 
         two nodes are connected, should between 0 and 1, default value is 0.2.
-       \item \code{cex_label_category} Scale of category node label size.
-       \item \code{cex_category} Number indicating the amount by which plotting category
+       \item \code{size_category} Number indicating the amount by which plotting category
         nodes should be scaled relative to the default.
-       \item \code{shadowtext} a logical value, whether to use shadow font. 
        \item \code{label_style} style of group label, one of "shadowtext" and "ggforce".
-       \item \code{repel whether} to correct the position of the label. Defaults to FALSE.
-       \item \code{group_legend} Logical, if TRUE, the grouping legend will be displayed.
+       \item \code{group} Logical, if TRUE, the grouping legend will be displayed.
         The default is FALSE.
-       \item \code{cex_label_group} Numeric, scale of group labels size, the default value is 1.
        \item \code{nWords} Numeric, the number of words in the cluster tags, the default value is 4.
        \item \code{label_format} a numeric value sets wrap length, alternatively a
         custom function to format axis labels.
