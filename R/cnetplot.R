@@ -36,7 +36,22 @@ cnetplot.enrichResult <- function(
     geneSets <- extract_geneSets(x, showCategory)
     foldChange <- fc_readable(x, foldChange)    
 
-    p <- cnetplot(geneSets, layout = layout, showCategory = showCategory, foldChange = foldChange, ...)
+    p <- cnetplot(geneSets, 
+        layout = layout, 
+        showCategory = showCategory, 
+        foldChange = foldChange, 
+        color_category = color_category,
+        size_category = size_category,
+        color_item = color_item,
+        size_item = size_item,
+        color_edge = color_edge,
+        size_edge = size_edge,
+        node_label = node_label,
+        hilight = hilight,
+        hilight_alpha = hilight_alpha,
+        ...
+    )
+
     p <- p + set_enrichplot_color(colors = get_enrichplot_color(3), name = "fold change")
     if (!is.null(foldChange)) {
         p <- p + guides(size  = guide_legend(order = 1), 
@@ -72,19 +87,32 @@ cnetplot.compareClusterResult <- function(
     y <- split(d$geneID, d$Description)
     gs <- lapply(y, function(item) unique(unlist(strsplit(item, split="/"))))
 
-    p <- cnetplot(gs, layout = layout, showCategory=length(gs), foldChange = foldChange, size_category=0, ...)
+    p <- cnetplot(gs, layout = layout, 
+        showCategory=length(gs), 
+        foldChange = foldChange, 
+        color_category = color_category,
+        size_category=0, 
+        color_item = color_item,
+        size_item = size_item,
+        color_edge = color_edge,
+        size_edge = size_edge,
+        node_label = node_label,
+        hilight = hilight,
+        hilight_alpha = hilight_alpha,        
+        ...)
 
-    add_node_pie(p, d, pie)
+    add_node_pie(p, d, pie, pie_scale=size_category)
 }
 
 #' @importFrom ggplot2 coord_fixed
-add_node_pie <- function(p, d, pie = "equal") {
+add_node_pie <- function(p, d, pie = "equal", pie_scale = 1) {
     dd <- d[,c('Cluster', 'Description', 'Count')]
     if (pie == "equal") dd$Count <- 1
     dd <- tidyr::pivot_wider(dd, names_from=.data$Cluster, values_from=.data$Count, values_fill=0)
     
     p <- p %<+% dd +
-        scatterpie::geom_scatterpie(cols=as.character(unique(d$Cluster)), legend_name = "Cluster", color=NA) +
+        scatterpie::geom_scatterpie(cols=as.character(unique(d$Cluster)), 
+            legend_name = "Cluster", color=NA, pie_scale = pie_scale) +
         coord_fixed() +
         guides(size = "none")
 
