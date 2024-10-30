@@ -1,3 +1,7 @@
+# enrichplot 1.26.0
+
++ Bioconductor RELEASE_3_20 (2024-10-30, Wed)
+
 # enrichplot 1.25.6
 
 + pretty gene count legend (2024-10-29, Tue, #271)
