@@ -1,3 +1,8 @@
+# enrichplot 1.27.1
+
++ add 'ID' parameter in `goplot()` (2024-10-30, Wed)
+  - <https://github.com/YuLab-SMU/enrichplot/issues/292#issuecomment-2445788948>
+
 # enrichplot 1.26.0
 
 + Bioconductor RELEASE_3_20 (2024-10-30, Wed)
