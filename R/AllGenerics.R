@@ -36,6 +36,7 @@
 ##'     dotplot(xx2, group = TRUE)
 ##'     dotplot(xx2, x = "GeneRatio", group = TRUE, size = "count")
 ##' }
+##' @author Guangchuang Yu
 setGeneric("dotplot",
            function(object,  ...)
                standardGeneric("dotplot")
@@ -87,6 +88,7 @@ setGeneric("dotplot",
 ##'     xx2 <- pairwise_termsim(xx)
 ##'     emapplot(xx2)
 ##' }
+##' @author Guangchuang Yu
 setGeneric("emapplot",
            function(x,  ...)
                standardGeneric("emapplot")
@@ -164,6 +166,7 @@ setGeneric("pairwise_termsim",
 ##'     goplot(yy)
 ##'     goplot(yy, showCategory = 5)
 ##' }
+##' @author Guangchuang Yu
 setGeneric("goplot",
            function(x, showCategory = 10, color = "p.adjust",
                     layout = "sugiyama", geom = "text", ...)
@@ -187,6 +190,7 @@ setGeneric("goplot",
 ##' data(geneList)
 ##' x <- gseDO(geneList)
 ##' gseaplot(x, geneSetID=1)
+##' @author Guangchuang Yu
 setGeneric("gseaplot",
            function(x, geneSetID, by = "all", title = "", ...) {
                standardGeneric("gseaplot")
@@ -271,6 +275,7 @@ setGeneric("volplot",
 ##' data(geneList)
 ##' x <- gseDO(geneList)
 ##' ridgeplot(x)
+##' @author Guangchuang Yu
 setGeneric("ridgeplot",
            function(x, showCategory=30, fill="p.adjust", core_enrichment = TRUE,
                     label_format = 30, ...)
@@ -289,6 +294,7 @@ setGeneric("ridgeplot",
 ##' @param ... additional parameters
 ##' @return plot
 ##' @export
+##' @author Guangchuang Yu
 setGeneric("upsetplot", function(x, ...) standardGeneric("upsetplot"))
 
 
@@ -387,6 +393,7 @@ setGeneric("treeplot",
 ##'     ego2 <- pairwise_termsim(ego, method = "Wang", semData = d)
 ##'     ssplot(ego2)    
 ##' }
+##' @author Guangchuang Yu
 setGeneric("ssplot",
            function(x, ...)
                standardGeneric("ssplot")

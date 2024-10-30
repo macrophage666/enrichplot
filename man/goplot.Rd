@@ -63,3 +63,6 @@ plot induced GO DAG of significant terms
     goplot(yy, showCategory = 5)
 }
 }
+\author{
+Guangchuang Yu
+}

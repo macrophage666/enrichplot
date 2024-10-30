@@ -110,3 +110,6 @@ Similarity space plot of enrichment analysis results.
     ssplot(ego2)    
 }
 }
+\author{
+Guangchuang Yu
+}
