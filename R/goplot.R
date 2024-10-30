@@ -17,14 +17,13 @@ setMethod("goplot", signature(x = "gseaResult"),
           })
 
 
-##' @rdname goplot
+
 ##' @importFrom utils data
 ##' @import GOSemSim
 ##' @importFrom ggplot2 scale_fill_gradientn
 ##' @importFrom grid arrow
 ##' @importFrom grid unit
 ##' @importFrom rlang check_installed
-##' @author Guangchuang Yu
 goplot.enrichResult <- function(x, showCategory = 10, color = "p.adjust",
                                 layout = igraph::layout_with_sugiyama, geom = "text", 
                                 ID = "Description", ...) {
