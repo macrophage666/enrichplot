@@ -1,3 +1,7 @@
+# enrichplot 1.27.1.001
+
++ re-export `ggtangle::geom_cnet_label()` (2024-11-06, Wed, #194)
+
 # enrichplot 1.27.1
 
 + add 'ID' parameter in `goplot()` (2024-10-30, Wed)
