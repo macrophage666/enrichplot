@@ -1,5 +1,6 @@
-# enrichplot 1.27.1.003
+# enrichplot 1.27.1.004
 
++ supports passing ID to 'showCategory' in `ridgeplot()` (2024-11-06, Wed, #295)
 + enhancement of `cnetplot()` (2024-11-06, Wed)
   - 'node_label' can be a vector of selected items/genes to specify the items to be displayed (#293)
   - 'node_label' can be 'exclusive' to label genes that are uniquely belongs to categories (#253)
