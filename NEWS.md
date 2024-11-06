@@ -1,5 +1,6 @@
-# enrichplot 1.27.1.001
+# enrichplot 1.27.1.002
 
++ `cneplot()` supports label genes by uniquely belongs to categories, share between categories and by specify log2FC threshold (2024-11-06, Wed, #253) 
 + re-export `ggtangle::geom_cnet_label()` (2024-11-06, Wed, #194)
 
 # enrichplot 1.27.1
