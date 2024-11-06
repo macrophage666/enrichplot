@@ -6,7 +6,7 @@
   - 'node_label' can be 'exclusive' to label genes that are uniquely belongs to categories (#253)
   - 'node_label' can be 'share' to label genes that are share between categories (#253)
   - 'node_label' can be, e.g. '> 1' or '< 1', to label genes that have log2FC values larger or smaller than the threshold (#253) 
-  - supports using `ggtangle::geom_cnet_label()` to label items/genes in independent layer (#194)
+  - supports using `ggtangle::geom_cnet_label()` to label items/genes in independent layer (#194, #266, #267)
 + fixed `ridgeplot()` when selecting a specific gene set and plotting non-core genes (2024-11-06, Wed, #298)
 
 # enrichplot 1.27.1
