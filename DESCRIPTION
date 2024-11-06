@@ -58,7 +58,7 @@ Remotes:
     YuLab-SMU/tidydr
 VignetteBuilder: knitr
 License: Artistic-2.0
-URL: https://yulab-smu.top/biomedical-knowledge-mining-book/
+URL: https://yulab-smu.top/contribution-knowledge-mining/
 BugReports: https://github.com/GuangchuangYu/enrichplot/issues
 biocViews: Annotation, GeneSetEnrichment, GO, KEGG,
     Pathways, Software, Visualization
