@@ -1,8 +1,12 @@
 # enrichplot 1.27.1.003
 
++ enhancement of `cnetplot()` (2024-11-06, Wed)
+  - 'node_label' can be a vector of selected items/genes to specify the items to be displayed (#293)
+  - 'node_label' can be 'exclusive' to label genes that are uniquely belongs to categories (#253)
+  - 'node_label' can be 'share' to label genes that are share between categories (#253)
+  - 'node_label' can be, e.g. '> 1' or '< 1', to label genes that have log2FC values larger or smaller than the threshold (#253) 
+  - supports using `ggtangle::geom_cnet_label()` to label items/genes in independent layer (#194)
 + fixed `ridgeplot()` when selecting a specific gene set and plotting non-core genes (2024-11-06, Wed, #298)
-+ `cneplot()` supports label genes by uniquely belongs to categories, share between categories and by specify log2FC threshold (2024-11-06, Wed, #253) 
-+ re-export `ggtangle::geom_cnet_label()` (2024-11-06, Wed, #194)
 
 # enrichplot 1.27.1
 
