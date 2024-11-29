@@ -1,4 +1,4 @@
-# enrichplot 1.27.1.006
+# enrichplot 1.27.2
 
 + `emapplot()` now allows passing color to a specific color, e.g., color = "black" (2024-11-29, Fri, #300)
 + bug fixed in `emapplot()` 
