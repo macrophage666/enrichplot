@@ -1,3 +1,9 @@
+# enrichplot 1.27.1.005
+
++ `emapplot()` now allows passing color to a specific color, e.g., color = "black" (2024-11-29, Fri, #300)
++ bug fixed in `emapplot()` 
+  - legend of term nodes will be retained when `group = TRUE` (2024-11-29, Fri, #300)
+
 # enrichplot 1.27.1.004
 
 + supports passing ID to 'showCategory' in `ridgeplot()` (2024-11-06, Wed, #295)
