@@ -1,11 +1,9 @@
-# enrichplot 1.27.1.005
+# enrichplot 1.27.1.006
 
 + `emapplot()` now allows passing color to a specific color, e.g., color = "black" (2024-11-29, Fri, #300)
 + bug fixed in `emapplot()` 
+  - `size_category` now works for pie node (2024-11-29, Fri, #301)
   - legend of term nodes will be retained when `group = TRUE` (2024-11-29, Fri, #300)
-
-# enrichplot 1.27.1.004
-
 + supports passing ID to 'showCategory' in `ridgeplot()` (2024-11-06, Wed, #295)
 + enhancement of `cnetplot()` (2024-11-06, Wed)
   - 'node_label' can be a vector of selected items/genes to specify the items to be displayed (#293)
