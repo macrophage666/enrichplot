@@ -1,6 +1,7 @@
-# enrichplot 1.27.2.001
+# enrichplot 1.27.2.002
 
-+ a safe way to extract gene sets in `ridgeplot()` (2024-12-12, Thu)
++ scale pies and add pie legend in `emapplot()` (2024-12-12, Thu, #304)
++ a safe way to extract gene sets in `ridgeplot()` (2024-12-12, Thu, #303)
 
 # enrichplot 1.27.2
 

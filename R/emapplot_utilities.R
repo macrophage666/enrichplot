@@ -557,27 +557,27 @@ add_ellipse <- function(p, group_legend, label_style,
 
 
 
-##' Get data for pie plot 
-##'
-##' @param enrichDf A data.frame of enrichment result.
-##' @param pie proportion of clusters in the pie chart, one of 'equal' (default) and 'Count'
-##' @param mergedEnrichDf A data.frame of merged enrichment result.
-##' @param cex_pie2axis It is used to adjust the relative size of the pie chart on the coordinate axis.
-##' @param p a ggraph object.
-##' @param cex_category Number indicating the amount by which plotting category
-##' nodes should be scaled relative to the default.
-##' @noRd
-get_pie_data <- function(enrichDf, pie, mergedEnrichDf, cex_pie2axis, p, cex_category) {
-    ggData <- p$data
-    ID_Cluster_mat <- prepare_pie_category(enrichDf = enrichDf, pie=pie) 
-    desc <- mergedEnrichDf$Description[match(rownames(ID_Cluster_mat),
-                                      mergedEnrichDf$Description)]
-    i <- match(desc, ggData$name)
-    ID_Cluster_mat$x <- ggData$x[i]
-    ID_Cluster_mat$y <- ggData$y[i]
-    ID_Cluster_mat$radius <- sqrt(ggData$size[i] / sum(ggData$size) * cex_category * cex_pie2axis)
-    return(ID_Cluster_mat)
-}
+# ##' Get data for pie plot 
+# ##'
+# ##' @param enrichDf A data.frame of enrichment result.
+# ##' @param pie proportion of clusters in the pie chart, one of 'equal' (default) and 'Count'
+# ##' @param mergedEnrichDf A data.frame of merged enrichment result.
+# ##' @param cex_pie2axis It is used to adjust the relative size of the pie chart on the coordinate axis.
+# ##' @param p a ggraph object.
+# ##' @param cex_category Number indicating the amount by which plotting category
+# ##' nodes should be scaled relative to the default.
+# ##' @noRd
+# get_pie_data <- function(enrichDf, pie, mergedEnrichDf, cex_pie2axis=1, p, cex_category=1) {
+#     ggData <- p$data
+#     ID_Cluster_mat <- prepare_pie_category(enrichDf = enrichDf, pie=pie) 
+#     desc <- mergedEnrichDf$Description[match(rownames(ID_Cluster_mat),
+#                                       mergedEnrichDf$Description)]
+#     i <- match(desc, ggData$name)
+#     ID_Cluster_mat$x <- ggData$x[i]
+#     ID_Cluster_mat$y <- ggData$y[i]
+#     ID_Cluster_mat$radius <- sqrt(ggData$size[i] / sum(ggData$size) * cex_category * cex_pie2axis)
+#     return(ID_Cluster_mat)
+# }
 
 # ##' Add category node(pie plot) 
 # ##'
