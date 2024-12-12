@@ -1,3 +1,7 @@
+# enrichplot 1.27.2.001
+
++ a safe way to extract gene sets in `ridgeplot()` (2024-12-12, Thu)
+
 # enrichplot 1.27.2
 
 + `emapplot()` now allows passing color to a specific color, e.g., color = "black" (2024-11-29, Fri, #300)
