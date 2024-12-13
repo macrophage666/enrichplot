@@ -22,7 +22,8 @@ tableGrob2 <- function(d, p = NULL, core_cex=1, col_cex=1.5, row_cex=1.5) {
     d <- d[order(rownames(d)),]
     check_installed('gridExtra', 'for `tableGrob2()`.')
     mytheme <- gridExtra::ttheme_default(core = list(fg_params = list(cex = core_cex)), 
-    colhead = list(fg_params = list(cex = col_cex)), rowhead = list(fg_params = list(cex = row_cex)))
+    colhead = list(fg_params = list(cex = col_cex)), 
+    rowhead = list(fg_params = list(cex = row_cex)))
     tp <- gridExtra::tableGrob(d, theme = mytheme)
     if (is.null(p)) {
         return(tp)
@@ -38,7 +39,7 @@ tableGrob2 <- function(d, p = NULL, core_cex=1, col_cex=1.5, row_cex=1.5) {
     j <- which(tp$layout$name == "rowhead-fg")
 
     for (i in seq_along(pcol)) {
-        tp$grobs[j][[i+1]][["gp"]] <- gpar(col = pcol[i])
+        tp$grobs[j][[i+1]][["gp"]] <- gpar(col = pcol[i], cex = row_cex)
     }
     return(tp)
 }
