@@ -21,7 +21,9 @@ tableGrob2 <- function(d, p = NULL) {
     # has_package("gridExtra")
     d <- d[order(rownames(d)),]
     check_installed('gridExtra', 'for `tableGrob2()`.')
-    tp <- gridExtra::tableGrob(d)
+    mytheme <- gridExtra::ttheme_default(core = list(fg_params = list(cex = 2)), 
+    colhead = list(fg_params = list(cex = 1)), rowhead = list(fg_params = list(cex = 1)))
+    tp <- gridExtra::tableGrob(d, theme = mytheme)
     if (is.null(p)) {
         return(tp)
     }
