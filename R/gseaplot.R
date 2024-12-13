@@ -313,7 +313,7 @@ gseaplot2 <- function(x, geneSetID, title = "", color="green", base_size = 11,
         for (i in seq_len(ncol(pd))) {
             pd[, i] <- format(pd[, i], digits = 4)
         }
-        tp <- tableGrob2(pd, p.res)
+        tp <- tableGrob2(pd, p.res, core_cex = 1, col_cex = 1.5, row_cex = 1.5)
 
         p.res <- p.res + theme(legend.position = "none") +
             annotation_custom(tp,
